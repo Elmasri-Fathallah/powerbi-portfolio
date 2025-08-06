@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathallah Elmasri - Senior Power BI Developer Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1B5E20;
+            --secondary: #FFD700;
+            --accent: #2E7D32;
+            --dark: #1A1A1A;
+            --light: #F5F5F5;
+            --powerbi-yellow: #F2C811;
+            --powerbi-dark: #1B1F23;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.05);
+            transform: rotate(35deg);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .title {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Power BI Highlight Section */
+        .powerbi-highlight {
+            background: linear-gradient(135deg, var(--powerbi-dark) 0%, #2C3E50 100%);
+            color: white;
+            padding: 50px 0;
+            margin: 40px 0;
+        }
+        
+        .powerbi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .powerbi-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--powerbi-yellow);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .powerbi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(242, 200, 17, 0.3);
+            background: rgba(242, 200, 17, 0.1);
+        }
+        
+        .powerbi-icon {
+            font-size: 3em;
+            color: var(--powerbi-yellow);
+            margin-bottom: 15px;
+        }
+        
+        .powerbi-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--powerbi-yellow);
+        }
+        
+        .powerbi-desc {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.5in;
+            }
+            
+            body {
+                font-size: 10pt;
+            }
+            
+            .header {
+                padding: 20px 0;
+                page-break-after: avoid;
+            }
+            
+            .powerbi-highlight {
+                page-break-inside: avoid;
+            }
+            
+            .project-card {
+                page-break-inside: avoid;
+            }
+            
+            .title {
+                font-size: 24pt;
+            }
+            
+            .subtitle {
+                font-size: 14pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Content from the artifact above -->
+    <!-- This is the enhanced HTML version optimized for PDF conversion -->
+</body>
+</html>
