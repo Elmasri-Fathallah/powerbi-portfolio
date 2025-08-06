@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fathallah Elmasri - Business Intelligence & Analytics Portfolio</title>
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
@@ -14,7 +13,14 @@
             box-sizing: border-box;
         }
         
-        /* CSS Variables for consistent theming */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        /* Professional Color Scheme */
         :root {
             --primary-blue: #0047AB;
             --accent-teal: #00A19C;
@@ -29,454 +35,537 @@
             --success-green: #10B981;
             --gradient-primary: linear-gradient(135deg, #0047AB 0%, #00A19C 100%);
             --gradient-dark: linear-gradient(135deg, #1E293B 0%, #334155 100%);
-            --max-width: 1400px;
-            --section-padding: 60px 20px;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        /* Smooth scrolling for the entire page */
-        html {
-            scroll-behavior: smooth;
+        /* Page Setup for A4 - Critical for PDF printing */
+        @page {
+            size: A4;
+            margin: 15mm 15mm 20mm 15mm;
         }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: #ffffff;
-            overflow-x: hidden;
-        }
-        
-        /* Container with better width utilization */
-        .container {
-            max-width: var(--max-width);
-            width: 100%;
+        .page {
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Section spacing optimization */
-        section {
-            padding: var(--section-padding);
+            background: white;
+            padding: 25mm 20mm;
+            page-break-after: always;
+            page-break-inside: avoid;
             position: relative;
         }
         
-        /* Smooth section transitions */
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-            opacity: 0.5;
+        /* Prevent page breaks inside elements */
+        .no-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
         
-        /* Hero/Header Section */
-        .hero-section {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1));
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
+        /* Typography - Optimized for print */
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        
-        h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
+            color: var(--dark-slate);
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 12px;
+            page-break-after: avoid;
         }
         
-        h2::after {
+        h1:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
+            width: 50px;
             height: 3px;
-            background: var(--golden);
-            transition: width 0.3s ease;
+            background: var(--gradient-primary);
+            border-radius: 2px;
         }
         
-        h2:hover::after {
-            width: 100px;
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
         }
         
         h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-size: 16px;
             font-weight: 600;
             color: var(--dark-slate);
-            margin-bottom: 1rem;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            page-break-after: avoid;
         }
         
-        /* Grid layouts for better space utilization */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .two-column-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin: 40px 0;
-        }
-        
-        /* Cards with better shadows and transitions */
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--card-shadow-hover);
-            border-color: var(--accent-teal);
-        }
-        
-        /* Stat cards */
-        .stat-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            page-break-after: avoid;
         }
         
-        .stat-label {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
+        p {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 11pt;
         }
         
-        /* Skills section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .skill-category {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            box-shadow: var(--card-shadow-hover);
-            border-color: var(--accent-teal);
-        }
-        
-        .skill-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            margin: 4px;
-            background: var(--bg-light);
-            border-radius: 20px;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
-        }
-        
-        .skill-tag:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Project cards */
-        .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-light);
-        }
-        
-        .project-card:hover {
-            box-shadow: var(--card-shadow-hover);
-            transform: translateY(-4px);
-        }
-        
-        .project-header {
-            background: var(--gradient-dark);
-            color: white;
-            padding: 30px;
-        }
-        
-        .project-content {
-            padding: 30px;
-        }
-        
-        /* QR Code section */
-        .qr-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .qr-box {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-        
-        .qr-box:hover {
-            border-color: var(--primary-blue);
-            box-shadow: var(--card-shadow-hover);
-            transform: scale(1.05);
-        }
-        
-        .qr-box img {
-            width: 100%;
-            max-width: 120px;
-            height: auto;
-            margin: 0 auto 10px;
-            display: block;
-        }
-        
-        /* Smooth section backgrounds */
-        .bg-light {
-            background: var(--bg-light);
-        }
-        
-        .bg-white {
-            background: white;
-        }
-        
-        .bg-gradient {
-            background: linear-gradient(135deg, var(--light-blue) 0%, white 100%);
-        }
-        
-        /* Table of contents styling */
-        .toc-section {
-            background: white;
-            padding: 40px 20px;
-            border-bottom: 1px solid var(--border-light);
-        }
-        
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-        
-        .toc-item {
-            padding: 15px 20px;
-            background: var(--bg-light);
-            border-radius: 8px;
-            border-left: 3px solid var(--primary-blue);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        
-        .toc-item:hover {
-            background: white;
-            box-shadow: var(--card-shadow);
-            transform: translateX(5px);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        .slide-in {
-            animation: slideInLeft 0.6s ease-out;
-        }
-        
-        /* Responsive improvements */
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: 40px 15px;
-            }
-            
-            .hero-section {
-                padding: 60px 15px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .features-grid,
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Print optimizations */
-        @media print {
-            section {
-                padding: 20px !important;
-                page-break-inside: avoid;
-            }
-            
-            .hero-section {
-                min-height: auto;
-                padding: 40px 20px !important;
-            }
-            
-            .card, .project-card {
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
-            }
-        }
-        
-        /* Smooth transitions for all interactive elements */
-        a, button, .card, .skill-tag, .toc-item, .qr-box, .stat-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Better link styling */
         a {
             color: var(--primary-blue);
             text-decoration: none;
+        }
+        
+        /* Cover Page - Clean and Professional */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 247mm;
+            text-align: center;
+            padding: 40mm 20mm;
+        }
+        
+        .cover-page h1 {
+            font-size: 36px;
+            border: none;
+            margin-bottom: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cover-page h1:after {
+            display: none;
+        }
+        
+        .cover-page .subtitle {
+            font-size: 20px;
+            color: var(--dark-slate);
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        .cover-page .tagline {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+            font-size: 11pt;
+        }
+        
+        /* Cards - Print optimized */
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+        }
+        
+        .card h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        /* Metrics - Compact for print */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+        }
+        
+        .metric .value {
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .metric .label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+        
+        /* Skills Grid - Compact layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 18px 0;
+        }
+        
+        .skill-category {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+            page-break-inside: avoid;
+        }
+        
+        .skill-category h4 {
+            color: var(--dark-slate);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .skill-items {
+            list-style: none;
+        }
+        
+        .skill-items li {
+            padding: 4px 0;
+            padding-left: 18px;
             position: relative;
+            color: var(--text-primary);
+            font-size: 10.5pt;
         }
         
-        a:hover {
+        .skill-items li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
             color: var(--accent-teal);
+            font-weight: bold;
         }
         
-        a::after {
+        /* Certifications - Print friendly */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+            page-break-inside: avoid;
+        }
+        
+        .cert-item {
+            background: var(--bg-light);
+            border-left: 3px solid var(--accent-teal);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 10pt;
+        }
+        
+        .cert-item strong {
+            color: var(--dark-slate);
+            font-size: 11pt;
+        }
+        
+        /* Projects - Structured for print */
+        .project {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+        }
+        
+        .project-header {
+            margin-bottom: 12px;
+        }
+        
+        .project-org {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 11pt;
+        }
+        
+        .project-role {
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        .project-tech {
+            background: var(--light-blue);
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 10pt;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        .impact-metrics {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .impact-item {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        /* Timeline - Clean for print */
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+            margin: 18px 0;
+        }
+        
+        .timeline:before {
             content: '';
             position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-teal);
-            transition: width 0.3s ease;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
         }
         
-        a:hover::after {
-            width: 100%;
-        }
-        
-        /* Improve list styling */
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        ul li {
+        .timeline-item {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
         }
         
-        ul li::before {
-            content: '•';
+        .timeline-item:before {
+            content: '';
             position: absolute;
-            left: 0;
+            left: -27px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary-blue);
+        }
+        
+        .timeline-date {
             color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 1.2em;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+        
+        /* QR Section - Print optimized */
+        .qr-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        
+        .qr-item {
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 6px;
+        }
+        
+        .qr-item img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 8px;
+        }
+        
+        .qr-placeholder {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--text-secondary);
+            border-radius: 6px;
+        }
+        
+        .qr-label {
+            font-size: 11px;
+            color: var(--dark-slate);
+            font-weight: 500;
+        }
+        
+        .qr-label a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* Table of Contents - Clean layout */
+        .toc {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .toc h2 {
+            color: var(--dark-slate);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 11pt;
+        }
+        
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc-list a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc-page {
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 18px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 2px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        /* Highlight box */
+        .highlight-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+            page-break-inside: avoid;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        /* Ministry accent */
+        .ministry-accent {
+            border-left: 4px solid var(--ministry-green);
+        }
+        
+        /* Certificate pages */
+        .certificate-page {
+            page-break-before: always;
+            page-break-after: always;
+            padding: 10mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 277mm;
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            max-height: 250mm;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Education section */
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        /* Print specific styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                page-break-after: always;
+                margin: 0;
+                padding: 15mm 15mm 20mm 15mm;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                color: var(--primary-blue) !important;
+            }
+            
+            .card, .project {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
         }
     </style>
-    
 </head>
 <body>
     <!-- Cover Page -->
@@ -554,7 +643,7 @@
     <div class="page" id="executive-summary">
         <h1>Executive Summary</h1>
         
-        <p>Accomplished Power BI & Business Intelligence Expert with 8+ years of experience, specializing in Power BI development for enterprise-grade analytics solutions and executive dashboards. Currently serving as Data Model Manager at AVIV Group, where I lead Power BI analytics initiatives, leveraging advanced DAX and data modeling to transform complex datasets into strategic insights driving business decisions across European markets.</p>
+        <p>Accomplished Business Intelligence Expert with 8+ years of experience delivering enterprise-grade analytics solutions and executive dashboards. Currently serving as Data Model Manager at AVIV Group, where I lead analytics initiatives that transform complex datasets into strategic insights driving business decisions across European markets.</p>
         
         <div class="card no-break">
             <h3>Key Analytics Achievements</h3>
@@ -704,7 +793,7 @@
             </div>
             
             <h4>Analytics Challenge & Solution</h4>
-            <p>Leading Power BI analytics transformation for Europe's largest real estate platforms, implementing Power BI data contracts and dataflows to ensure reliable insights across executive and operational Power BI dashboards.</p>
+            <p>Leading analytics transformation for Europe's largest real estate platforms, implementing data contracts to ensure reliable insights across executive and operational dashboards.</p>
             
             <ul class="skill-items">
                 <li>Delivered comprehensive Power BI dashboards for strategic decision-making</li>
@@ -733,7 +822,7 @@
             </div>
             
             <h4>Analytics Impact</h4>
-            <p>Revolutionized sales analytics using Power BI Pro/Premium providing real-time visibility into global operations, enabling data-driven decisions that improved sales efficiency by 30%.</p>
+            <p>Revolutionized sales analytics providing real-time visibility into global operations, enabling data-driven decisions that improved sales efficiency by 30%.</p>
             
             <ul class="skill-items">
                 <li>Built executive dashboard suite for pipeline tracking</li>
@@ -766,7 +855,7 @@
             </div>
             
             <h4>Analytics Delivered</h4>
-            <p>Pioneered Power BI Embedded analytics infrastructure for solar energy fintech, creating dashboards that enabled real-time financial monitoring and customer behavior analysis.</p>
+            <p>Pioneered analytics infrastructure for solar energy fintech, creating dashboards that enabled real-time financial monitoring and customer behavior analysis.</p>
             
             <ul class="skill-items">
                 <li>Developed comprehensive financial analytics dashboards</li>
@@ -794,7 +883,7 @@
             </div>
             
             <h4>Analytics Impact</h4>
-            <p>Led Power BI Center of Excellence delivering operational dashboards while managing cross-functional teams of 12-18 members, achieving 20% productivity improvements.</p>
+            <p>Led analytics team delivering operational dashboards while managing cross-functional teams of 12-18 members, achieving 20% productivity improvements.</p>
             
             <ul class="skill-items">
                 <li>Delivered comprehensive operational dashboards</li>
@@ -841,7 +930,7 @@
                 <div class="timeline-date">2019 - 2022</div>
                 <h3>Team Manager / Data Analyst</h3>
                 <p><strong>Sitel Group, Berlin</strong></p>
-                <p>Led Power BI Center of Excellence delivering operational dashboards while achieving 20% productivity improvements.</p>
+                <p>Led analytics team delivering operational dashboards while achieving 20% productivity improvements.</p>
             </div>
             
             <div class="timeline-item no-break">
@@ -966,11 +1055,11 @@
             <div class="card">
                 <h3>BI & Analytics Tools</h3>
                 <ul class="skill-items">
-                    <li>Power BI Suite: ⭐⭐⭐⭐⭐ Expert (Desktop, Service, Premium, Mobile, Report Server)</li>
-                    <li>DAX & Power Query M: ⭐⭐⭐⭐⭐ Expert (Complex Measures, Performance Optimization)</li>
-                    <li>Tableau: ⭐⭐⭐ Good (Secondary tool to Power BI)</li>
+                    <li>Power BI: ⭐⭐⭐⭐⭐ Expert</li>
+                    <li>DAX: ⭐⭐⭐⭐⭐ Expert</li>
+                    <li>Tableau: ⭐⭐⭐⭐ Advanced</li>
                     <li>Zoho Analytics: ⭐⭐⭐⭐ Advanced</li>
-                    <li>Excel & Power Pivot: ⭐⭐⭐⭐⭐ Expert (Foundation for Power BI skills)</li>
+                    <li>Excel: ⭐⭐⭐⭐⭐ Expert</li>
                 </ul>
             </div>
             
