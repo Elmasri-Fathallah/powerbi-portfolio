@@ -1,1 +1,1157 @@
-﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathallah Elmasri - Business Intelligence & Analytics Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        /* Professional Color Scheme */
+        :root {
+            --primary-blue: #0047AB;
+            --accent-teal: #00A19C;
+            --ministry-green: #2E7D32;
+            --dark-slate: #1E293B;
+            --light-blue: #E8F2FF;
+            --golden: #FFB800;
+            --text-primary: #1a1a1a;
+            --text-secondary: #64748B;
+            --bg-light: #F8FAFC;
+            --border-light: #E2E8F0;
+            --success-green: #10B981;
+            --gradient-primary: linear-gradient(135deg, #0047AB 0%, #00A19C 100%);
+            --gradient-dark: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+        }
+        
+        /* Page Setup for A4 - Critical for PDF printing */
+        @page {
+            size: A4;
+            margin: 15mm 15mm 20mm 15mm;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 25mm 20mm;
+            page-break-after: always;
+            page-break-inside: avoid;
+            position: relative;
+        }
+        
+        /* Prevent page breaks inside elements */
+        .no-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        /* Typography - Optimized for print */
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark-slate);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+            page-break-after: avoid;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-slate);
+            margin-top: 18px;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            margin-top: 12px;
+            margin-bottom: 6px;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 11pt;
+        }
+        
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* Cover Page - Clean and Professional */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 247mm;
+            text-align: center;
+            padding: 40mm 20mm;
+        }
+        
+        .cover-page h1 {
+            font-size: 36px;
+            border: none;
+            margin-bottom: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cover-page h1:after {
+            display: none;
+        }
+        
+        .cover-page .subtitle {
+            font-size: 20px;
+            color: var(--dark-slate);
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        .cover-page .tagline {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+            font-size: 11pt;
+        }
+        
+        /* Cards - Print optimized */
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+        }
+        
+        .card h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        
+        /* Metrics - Compact for print */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+        }
+        
+        .metric .value {
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .metric .label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+        
+        /* Skills Grid - Compact layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 18px 0;
+        }
+        
+        .skill-category {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+            page-break-inside: avoid;
+        }
+        
+        .skill-category h4 {
+            color: var(--dark-slate);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .skill-items {
+            list-style: none;
+        }
+        
+        .skill-items li {
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+            color: var(--text-primary);
+            font-size: 10.5pt;
+        }
+        
+        .skill-items li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+        
+        /* Certifications - Print friendly */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+            page-break-inside: avoid;
+        }
+        
+        .cert-item {
+            background: var(--bg-light);
+            border-left: 3px solid var(--accent-teal);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 10pt;
+        }
+        
+        .cert-item strong {
+            color: var(--dark-slate);
+            font-size: 11pt;
+        }
+        
+        /* Projects - Structured for print */
+        .project {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+        }
+        
+        .project-header {
+            margin-bottom: 12px;
+        }
+        
+        .project-org {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 11pt;
+        }
+        
+        .project-role {
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        .project-tech {
+            background: var(--light-blue);
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 10pt;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        .impact-metrics {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .impact-item {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        /* Timeline - Clean for print */
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+            margin: 18px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary-blue);
+        }
+        
+        .timeline-date {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 10pt;
+        }
+        
+        /* QR Section - Print optimized */
+        .qr-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        
+        .qr-item {
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 6px;
+        }
+        
+        .qr-item img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 8px;
+        }
+        
+        .qr-placeholder {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--text-secondary);
+            border-radius: 6px;
+        }
+        
+        .qr-label {
+            font-size: 11px;
+            color: var(--dark-slate);
+            font-weight: 500;
+        }
+        
+        .qr-label a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        /* Table of Contents - Clean layout */
+        .toc {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .toc h2 {
+            color: var(--dark-slate);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 11pt;
+        }
+        
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc-list a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc-page {
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 18px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 2px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 10pt;
+        }
+        
+        /* Highlight box */
+        .highlight-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+            page-break-inside: avoid;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        /* Ministry accent */
+        .ministry-accent {
+            border-left: 4px solid var(--ministry-green);
+        }
+        
+        /* Certificate pages */
+        .certificate-page {
+            page-break-before: always;
+            page-break-after: always;
+            padding: 10mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 277mm;
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            max-height: 250mm;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Education section */
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        /* Print specific styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                page-break-after: always;
+                margin: 0;
+                padding: 15mm 15mm 20mm 15mm;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                color: var(--primary-blue) !important;
+            }
+            
+            .card, .project {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <h1>Business Intelligence & Analytics Expert</h1>
+        <div class="subtitle">Professional Portfolio</div>
+        <div class="tagline">Transforming Complex Data into Strategic Insights</div>
+        
+        <div style="margin: 40px 0;">
+            <h2 style="border: none; margin-bottom: 20px; color: var(--dark-slate);">Fathallah Elmasri</h2>
+            <p style="font-size: 16px; color: var(--primary-blue);">
+                Data Model Manager | Analytics Leader | Dashboard Specialist
+            </p>
+        </div>
+        
+        <div class="contact-info">
+            <p>📧 <a href="mailto:fathallah.elmasri@gmail.com">fathallah.elmasri@gmail.com</a></p>
+            <p>📱 (+966) 593834672 | (+49) 15510197596</p>
+            <p>🔗 <a href="https://www.linkedin.com/in/fathallah-elmasri">LinkedIn</a> | 
+               <a href="https://github.com/Elmasri-Fathallah">GitHub</a> | 
+               <a href="https://public.tableau.com/app/profile/fathallah.elmasri">Tableau Portfolio</a></p>
+        </div>
+        
+        <div style="margin-top: auto; padding-top: 40px;">
+            <p style="font-size: 14px; color: var(--dark-slate);">
+                <strong>Prepared for: Saudi Ministry of Industry</strong>
+            </p>
+            <p style="color: var(--text-secondary);">August 2025</p>
+        </div>
+    </div>
+    
+    <!-- Table of Contents & Overview -->
+    <div class="page">
+        <div class="toc no-break">
+            <h2>Portfolio Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#executive-summary">Executive Summary <span class="toc-page">3</span></a></li>
+                <li><a href="#core-competencies">Analytics & Dashboard Expertise <span class="toc-page">4</span></a></li>
+                <li><a href="#key-projects">Enterprise Analytics Projects <span class="toc-page">5</span></a></li>
+                <li><a href="#professional-history">Professional Timeline <span class="toc-page">7</span></a></li>
+                <li><a href="#education">Education & Certifications <span class="toc-page">8</span></a></li>
+                <li><a href="#digital-portfolio">Digital Portfolio <span class="toc-page">9</span></a></li>
+                <li><a href="#ministry-vision">Vision for Ministry of Industry <span class="toc-page">10</span></a></li>
+            </ul>
+        </div>
+        
+        <div class="metrics no-break">
+            <div class="metric">
+                <div class="value">8+</div>
+                <div class="label">Years Experience</div>
+            </div>
+            <div class="metric">
+                <div class="value">25+</div>
+                <div class="label">Certifications</div>
+            </div>
+            <div class="metric">
+                <div class="value">30%</div>
+                <div class="label">Process Improvement</div>
+            </div>
+        </div>
+        
+        <div class="card ministry-accent no-break">
+            <h3>Professional Highlights</h3>
+            <ul class="skill-items">
+                <li>Current <strong>Data Model Manager</strong> at AVIV Group - Europe's largest real estate platform</li>
+                <li>Extensive experience delivering <strong>enterprise dashboards</strong> for strategic decisions</li>
+                <li>Achieved <strong>30% improvement</strong> in decision-making efficiency through analytics</li>
+                <li>Completed <strong>25+ professional certifications</strong> in Analytics, AI/ML, and Cloud Technologies</li>
+                <li><strong>Multilingual professional</strong>: Arabic (Native), English (Fluent), German (B1)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Executive Summary -->
+    <div class="page" id="executive-summary">
+        <h1>Executive Summary</h1>
+        
+        <p>Accomplished Business Intelligence Expert with 8+ years of experience delivering enterprise-grade analytics solutions and executive dashboards. Currently serving as Data Model Manager at AVIV Group, where I lead analytics initiatives that transform complex datasets into strategic insights driving business decisions across European markets.</p>
+        
+        <div class="card no-break">
+            <h3>Key Analytics Achievements</h3>
+            <ul class="skill-items">
+                <li><strong>Enterprise Dashboard Development</strong> for executive and operational teams</li>
+                <li><strong>30% Improvement</strong> in decision-making efficiency through real-time analytics</li>
+                <li><strong>20% Productivity Increase</strong> via automated reporting and self-service analytics</li>
+                <li><strong>Data Quality Excellence</strong> through implementing data contracts and governance</li>
+                <li><strong>Cross-functional Analytics Teams</strong> leadership and mentorship</li>
+                <li><strong>AI/ML Integration</strong> enhancing traditional BI workflows</li>
+            </ul>
+        </div>
+        
+        <div class="card no-break">
+            <h3>Core Analytics Value Proposition</h3>
+            <ul class="skill-items">
+                <li>Expert in translating business requirements into powerful visual analytics</li>
+                <li>Specialized in Power BI ecosystem with advanced DAX and data modeling</li>
+                <li>Strong focus on self-service analytics and user adoption</li>
+                <li>Proven track record of delivering insights that drive measurable ROI</li>
+                <li>Experience with government and enterprise-scale reporting requirements</li>
+                <li>Continuous learner with extensive certifications in modern analytics technologies</li>
+            </ul>
+        </div>
+        
+        <h2>Professional Certifications</h2>
+        <div class="cert-grid no-break">
+            <div class="cert-item">
+                <strong>Deep Learning Specialization</strong><br>
+                DeepLearning.AI (5 courses)
+            </div>
+            <div class="cert-item">
+                <strong>Natural Language Processing</strong><br>
+                DeepLearning.AI (4 courses)
+            </div>
+            <div class="cert-item">
+                <strong>Executive Data Science</strong><br>
+                Johns Hopkins University (5 courses)
+            </div>
+            <div class="cert-item">
+                <strong>Generative Adversarial Networks</strong><br>
+                DeepLearning.AI (3 courses)
+            </div>
+            <div class="cert-item">
+                <strong>TensorFlow Developer</strong><br>
+                Professional Certificate (4 courses)
+            </div>
+            <div class="cert-item">
+                <strong>AWS Fundamentals</strong><br>
+                Amazon Web Services (4 courses)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Core Competencies -->
+    <div class="page" id="core-competencies">
+        <h1>Analytics & Dashboard Expertise</h1>
+        
+        <h2>Business Intelligence Excellence</h2>
+        
+        <div class="skills-grid no-break">
+            <div class="skill-category">
+                <h4>Dashboard & Visualization</h4>
+                <ul class="skill-items">
+                    <li>Power BI advanced dashboards</li>
+                    <li>Executive KPI scorecards</li>
+                    <li>Real-time operational reporting</li>
+                    <li>Mobile-optimized analytics</li>
+                    <li>Tableau interactive visualizations</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Analytics Engineering</h4>
+                <ul class="skill-items">
+                    <li>Complex DAX measures</li>
+                    <li>Data contracts & quality</li>
+                    <li>Self-service analytics</li>
+                    <li>Automated reporting pipelines</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Advanced Analytics</h4>
+                <ul class="skill-items">
+                    <li>Statistical analysis</li>
+                    <li>Trend identification</li>
+                    <li>Anomaly detection</li>
+                    <li>Forecasting models</li>
+                    <li>Segmentation analysis</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Data Platforms</h4>
+                <ul class="skill-items">
+                    <li>Snowflake cloud analytics</li>
+                    <li>DataHub metadata</li>
+                    <li>Zoho Analytics suite</li>
+                    <li>GA4 implementation</li>
+                    <li>SQL optimization</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Industry Analytics Excellence</h2>
+        
+        <div class="two-column no-break">
+            <div class="card">
+                <h3>Sectors Served</h3>
+                <ul class="skill-items">
+                    <li>Real Estate & Property Management</li>
+                    <li>Manufacturing & Industrial</li>
+                    <li>Energy & Sustainability</li>
+                    <li>Financial Services</li>
+                    <li>Government & Public Sector</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Analytics Leadership</h3>
+                <ul class="skill-items">
+                    <li>Strategy development</li>
+                    <li>Governance frameworks</li>
+                    <li>User adoption programs</li>
+                    <li>Center of Excellence</li>
+                    <li>Stakeholder management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Projects -->
+    <div class="page" id="key-projects">
+        <h1>Enterprise Analytics Projects</h1>
+        
+        <div class="project no-break">
+            <div class="project-header">
+                <h3>Enterprise Analytics & Data Contracts Platform</h3>
+                <div class="project-org">AVIV Group, Berlin</div>
+                <div class="project-role">Data Model Manager | Sept 2023 - Present</div>
+            </div>
+            
+            <div class="project-tech">
+                <strong>Analytics Stack:</strong> Power BI, Snowflake, DataHub, Python, DAX, Data Contracts
+            </div>
+            
+            <h4>Analytics Challenge & Solution</h4>
+            <p>Leading analytics transformation for Europe's largest real estate platforms, implementing data contracts to ensure reliable insights across executive and operational dashboards.</p>
+            
+            <ul class="skill-items">
+                <li>Delivered comprehensive Power BI dashboards for strategic decision-making</li>
+                <li>Implemented data contracts ensuring high data quality for critical KPIs</li>
+                <li>Created self-service analytics reducing report requests significantly</li>
+                <li>Built analytics for market trends and portfolio optimization</li>
+                <li>Established analytics governance framework across multiple markets</li>
+            </ul>
+            
+            <div class="impact-metrics">
+                <span class="impact-item">Executive Dashboards</span>
+                <span class="impact-item">Faster Insights</span>
+                <span class="impact-item">Data Quality Excellence</span>
+            </div>
+        </div>
+        
+        <div class="project no-break">
+            <div class="project-header">
+                <h3>Sales Analytics Transformation</h3>
+                <div class="project-org">SHIJI Group, Berlin</div>
+                <div class="project-role">Senior BI Analyst | Sept 2022 - April 2023</div>
+            </div>
+            
+            <div class="project-tech">
+                <strong>Analytics Stack:</strong> Power BI, Tableau, Advanced DAX, Python
+            </div>
+            
+            <h4>Analytics Impact</h4>
+            <p>Revolutionized sales analytics providing real-time visibility into global operations, enabling data-driven decisions that improved sales efficiency by 30%.</p>
+            
+            <ul class="skill-items">
+                <li>Built executive dashboard suite for pipeline tracking</li>
+                <li>Developed models for sales forecasting with high accuracy</li>
+                <li>Created automated reporting saving significant time weekly</li>
+                <li>Implemented drill-through analytics from region to deal level</li>
+            </ul>
+            
+            <div class="impact-metrics">
+                <span class="impact-item">30% Better Visibility</span>
+                <span class="impact-item">Automated Reporting</span>
+                <span class="impact-item">Time Savings</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- More Projects -->
+    <div class="page">
+        <h1>Additional Analytics Projects</h1>
+        
+        <div class="project no-break">
+            <div class="project-header">
+                <h3>Financial Analytics Platform</h3>
+                <div class="project-org">Enpal, Berlin</div>
+                <div class="project-role">Business Intelligence Analyst | June - Sept 2023</div>
+            </div>
+            
+            <div class="project-tech">
+                <strong>Analytics Stack:</strong> Power BI, Zoho Analytics, Python, Advanced DAX
+            </div>
+            
+            <h4>Analytics Delivered</h4>
+            <p>Pioneered analytics infrastructure for solar energy fintech, creating dashboards that enabled real-time financial monitoring and customer behavior analysis.</p>
+            
+            <ul class="skill-items">
+                <li>Developed comprehensive financial analytics dashboards</li>
+                <li>Built mobile-first executive scorecards</li>
+                <li>Implemented anomaly detection for financial metrics</li>
+                <li>Created customer segmentation analytics</li>
+            </ul>
+            
+            <div class="impact-metrics">
+                <span class="impact-item">Real-time Analytics</span>
+                <span class="impact-item">Mobile Dashboards</span>
+                <span class="impact-item">Financial Insights</span>
+            </div>
+        </div>
+        
+        <div class="project no-break">
+            <div class="project-header">
+                <h3>Operational Excellence Analytics</h3>
+                <div class="project-org">Sitel Group, Berlin</div>
+                <div class="project-role">Team Manager / Data Analyst | Sept 2019 - Sept 2022</div>
+            </div>
+            
+            <div class="project-tech">
+                <strong>Analytics Stack:</strong> Power BI, SQL Server, Excel, Python
+            </div>
+            
+            <h4>Analytics Impact</h4>
+            <p>Led analytics team delivering operational dashboards while managing cross-functional teams of 12-18 members, achieving 20% productivity improvements.</p>
+            
+            <ul class="skill-items">
+                <li>Delivered comprehensive operational dashboards</li>
+                <li>20% productivity gain through analytics insights</li>
+                <li>Real-time KPI monitoring systems</li>
+                <li>Team performance analytics and scorecards</li>
+            </ul>
+            
+            <div class="impact-metrics">
+                <span class="impact-item">20% Productivity Gain</span>
+                <span class="impact-item">Team Excellence</span>
+                <span class="impact-item">KPI Monitoring</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Professional History -->
+    <div class="page" id="professional-history">
+        <h1>Professional Timeline</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2023 - Present</div>
+                <h3>Data Model Manager</h3>
+                <p><strong>AVIV Group, Berlin</strong></p>
+                <p>Leading analytics strategy and dashboard development for Europe's largest real estate platforms. Managing data contracts ensuring reliable insights across comprehensive dashboard solutions.</p>
+            </div>
+            
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2023</div>
+                <h3>Business Intelligence Analyst</h3>
+                <p><strong>Enpal, Berlin</strong></p>
+                <p>Delivered advanced financial analytics and dashboards for solar energy fintech venture.</p>
+            </div>
+            
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2022 - 2023</div>
+                <h3>Senior BI Analyst</h3>
+                <p><strong>SHIJI Group, Berlin</strong></p>
+                <p>Transformed sales operations through comprehensive analytics achieving 30% improvement in visibility.</p>
+            </div>
+            
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2019 - 2022</div>
+                <h3>Team Manager / Data Analyst</h3>
+                <p><strong>Sitel Group, Berlin</strong></p>
+                <p>Led analytics team delivering operational dashboards while achieving 20% productivity improvements.</p>
+            </div>
+            
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2019</div>
+                <h3>Quality Analyst</h3>
+                <p><strong>Sitel Group, Berlin</strong></p>
+                <p>Analyzed performance metrics maintaining quality scores above 85%.</p>
+            </div>
+            
+            <div class="timeline-item no-break">
+                <div class="timeline-date">2016 - 2017</div>
+                <h3>GIS Analyst</h3>
+                <p><strong>UIZ GmbH, Berlin</strong></p>
+                <p>Developed geospatial analytics solutions serving government and private organizations.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Education -->
+    <div class="page" id="education">
+        <h1>Education & Professional Development</h1>
+        
+        <h2>Academic Qualifications</h2>
+        
+        <div class="education-item no-break">
+            <h3>Master of Science - Geodesy and Geoinformation Science</h3>
+            <p><strong>Technische Universität Berlin, Germany</strong> | Expected 2025</p>
+            <p>Thesis: Advanced Analytics for Urban Infrastructure Optimization<br>
+            Focus Areas: Spatial data analysis, Advanced visualization techniques, Analytics applications</p>
+        </div>
+        
+        <div class="education-item no-break">
+            <h3>Bachelor of Science - Civil Engineering</h3>
+            <p><strong>Mansoura University, Egypt</strong> | 2012</p>
+            <p>Foundation: Mathematical modeling, Statistical analysis, Project management<br>
+            Relevant Coursework: Data structures, Numerical methods, Systems analysis</p>
+        </div>
+        
+        <h2>Professional Certifications Overview</h2>
+        
+        <div class="card no-break">
+            <h3>Analytics & Data Science (25+ Courses)</h3>
+            <div class="two-column">
+                <ul class="skill-items">
+                    <li><strong>Deep Learning:</strong> Neural networks, CNNs, RNNs</li>
+                    <li><strong>NLP:</strong> Text analytics, sentiment analysis</li>
+                    <li><strong>Executive Data Science:</strong> Team leadership</li>
+                    <li><strong>Cloud Analytics:</strong> AWS fundamentals</li>
+                </ul>
+                <ul class="skill-items">
+                    <li><strong>TensorFlow:</strong> ML implementation</li>
+                    <li><strong>GANs:</strong> Advanced visualization</li>
+                    <li><strong>Data Analysis:</strong> Johns Hopkins</li>
+                    <li><strong>Business Analytics:</strong> Applied skills</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Languages</h2>
+        
+        <div class="two-column no-break">
+            <div class="card">
+                <ul class="skill-items">
+                    <li><strong>Arabic:</strong> Native proficiency</li>
+                    <li><strong>English:</strong> Full professional proficiency</li>
+                    <li><strong>German:</strong> Professional working proficiency (B1)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <ul class="skill-items">
+                    <li>International project experience</li>
+                    <li>Cross-cultural communication</li>
+                    <li>Multilingual documentation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Digital Portfolio -->
+    <div class="page" id="digital-portfolio">
+        <h1>Digital Portfolio & Resources</h1>
+        
+        <h2>Interactive Analytics Portfolio</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">
+            Scan QR codes or click links to explore live dashboards and analytics projects
+        </p>
+        
+        <div class="qr-section no-break">
+            <div class="qr-item">
+                <img src="../assets/QR_tableau_portfolio.png" alt="Tableau QR" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="qr-placeholder" style="display:none;">QR Code</div>
+                <div class="qr-label">
+                    <a href="https://public.tableau.com/app/profile/fathallah.elmasri" target="_blank">Tableau Dashboards</a>
+                </div>
+            </div>
+            <div class="qr-item">
+                <img src="../assets/QR_github.png" alt="GitHub QR" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="qr-placeholder" style="display:none;">QR Code</div>
+                <div class="qr-label">
+                    <a href="https://github.com/Elmasri-Fathallah" target="_blank">Analytics Code</a>
+                </div>
+            </div>
+            <div class="qr-item">
+                <img src="../assets/QR_linkedin.png" alt="LinkedIn QR" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="qr-placeholder" style="display:none;">QR Code</div>
+                <div class="qr-label">
+                    <a href="https://www.linkedin.com/in/fathallah-elmasri" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="qr-item">
+                <img src="../assets/QR_email.png" alt="Email QR" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="qr-placeholder" style="display:none;">QR Code</div>
+                <div class="qr-label">
+                    <a href="mailto:fathallah.elmasri@gmail.com">Email Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Technical Proficiency Matrix</h2>
+        
+        <div class="two-column no-break">
+            <div class="card">
+                <h3>BI & Analytics Tools</h3>
+                <ul class="skill-items">
+                    <li>Power BI: ⭐⭐⭐⭐⭐ Expert</li>
+                    <li>DAX: ⭐⭐⭐⭐⭐ Expert</li>
+                    <li>Tableau: ⭐⭐⭐⭐ Advanced</li>
+                    <li>Zoho Analytics: ⭐⭐⭐⭐ Advanced</li>
+                    <li>Excel: ⭐⭐⭐⭐⭐ Expert</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Data Technologies</h3>
+                <ul class="skill-items">
+                    <li>SQL: ⭐⭐⭐⭐⭐ Expert</li>
+                    <li>Python: ⭐⭐⭐⭐ Advanced</li>
+                    <li>Snowflake: ⭐⭐⭐⭐ Advanced</li>
+                    <li>Cloud Platforms: ⭐⭐⭐⭐ Advanced</li>
+                    <li>Data Contracts: ⭐⭐⭐⭐⭐ Expert</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ministry Vision -->
+    <div class="page" id="ministry-vision">
+        <h1>Vision for Saudi Ministry of Industry</h1>
+        
+        <h2>Empowering Industrial Transformation Through Analytics</h2>
+        
+        <p>I am excited to contribute to the Ministry of Industry's digital transformation by establishing world-class analytics capabilities that will drive data-driven decision-making across Saudi Arabia's industrial sectors. My combination of enterprise analytics expertise and understanding of government requirements positions me ideally to support the Ministry's strategic objectives.</p>
+        
+        <div class="card ministry-accent no-break">
+            <h3>Analytics Value for the Ministry</h3>
+            <ul class="skill-items">
+                <li><strong>Industrial KPI Framework:</strong> Comprehensive analytics covering all sectors</li>
+                <li><strong>Real-time Monitoring:</strong> Live dashboards tracking ministry initiatives</li>
+                <li><strong>Trend Analysis:</strong> Identifying patterns and growth opportunities</li>
+                <li><strong>Self-Service Analytics:</strong> Empowering departments with intuitive tools</li>
+                <li><strong>Data Quality Excellence:</strong> Implementing contracts for reliable reporting</li>
+            </ul>
+        </div>
+        
+        <h2>Strategic Analytics Implementation</h2>
+        
+        <div class="two-column no-break">
+            <div class="card">
+                <h3>Foundation Phase</h3>
+                <ul class="skill-items">
+                    <li>Industrial sector dashboards</li>
+                    <li>Executive analytics portal</li>
+                    <li>Data quality frameworks</li>
+                    <li>Quick-win projects</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Expansion Phase</h3>
+                <ul class="skill-items">
+                    <li>Advanced analytics integration</li>
+                    <li>Cross-sector platform</li>
+                    <li>Mobile analytics deployment</li>
+                    <li>Analytics excellence center</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Vision 2030 Analytics Alignment</h2>
+        
+        <div class="highlight-box no-break">
+            <h3>Supporting Saudi Industrial Strategy</h3>
+            <div class="two-column" style="color: white;">
+                <ul class="skill-items" style="color: white;">
+                    <li style="color: white;">Manufacturing analytics</li>
+                    <li style="color: white;">Energy performance monitoring</li>
+                    <li style="color: white;">Mining optimization</li>
+                    <li style="color: white;">Logistics analytics</li>
+                </ul>
+                <ul class="skill-items" style="color: white;">
+                    <li style="color: white;">Investment tracking</li>
+                    <li style="color: white;">Sustainability metrics</li>
+                    <li style="color: white;">Export/import analysis</li>
+                    <li style="color: white;">Diversification monitoring</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card no-break" style="margin-top: 20px; text-align: center;">
+            <h3>Contact Information</h3>
+            <p style="margin-top: 15px;">
+                <strong>📧</strong> fathallah.elmasri@gmail.com<br>
+                <strong>📱</strong> (+966) 593834672 | (+49) 15510197596<br>
+                <strong>🔗</strong> Digital portfolio available via links and QR codes
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Thank you for considering my application.</strong></p>
+            <p>I look forward to contributing to the Kingdom's industrial transformation through advanced analytics.</p>
+        </div>
+    </div>
+</body>
+</html>
