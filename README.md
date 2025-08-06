@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Senior Power BI Developer Portfolio
 
 [![Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Site-brightgreen)](https://elmasri-fathallah.github.io/powerbi-portfolio/)
@@ -89,3 +90,6 @@ Excited to establish a world-class **Power BI Center of Excellence** that will:
 ### 🌟 Ready to Transform Your Data into Insights!
 
 *This portfolio showcases my commitment to excellence in Power BI development and my readiness to contribute to Saudi Arabia's industrial digital transformation.*
+=======
+# powerbi-portfolio
+>>>>>>> 8febebdbdad07580e80aca1882cb8fcbfca80e48
