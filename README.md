@@ -74,7 +74,7 @@ Integration:      REST APIs | SharePoint | Teams | Power Apps
 - 📧 Email: [fathallah.elmasri@gmail.com](mailto:fathallah.elmasri@gmail.com)
 - 💼 LinkedIn: [linkedin.com/in/fathallahelmasri](https://linkedin.com/in/fathallahelmasri)
 - 📊 Tableau: [public.tableau.com/app/profile/fathallah.elmasri](https://public.tableau.com/app/profile/fathallah.elmasri)
-- 📱 Phone: +966 593834672
+- 📱 Phone: (+966) 0593834672 / (+49) 015510197596
 
 ---
 
