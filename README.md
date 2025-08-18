@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Business Intelligence & Analytics Portfolio
 
 [![Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Site-brightgreen)](https://elmasri-fathallah.github.io/powerbi-portfolio/)
