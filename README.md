@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-# 🚀 Senior Power BI Developer Portfolio
+# Business Intelligence & Analytics Portfolio
 
 [![Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Site-brightgreen)](https://elmasri-fathallah.github.io/powerbi-portfolio/)
 [![Power BI](https://img.shields.io/badge/Power%20BI-Expert-yellow)](https://powerbi.microsoft.com/)
 [![Experience](https://img.shields.io/badge/Experience-6%2B%20Years-blue)](https://linkedin.com/in/fathallahelmasri)
 
-## 👋 About Me
+## About Me
 
-Senior Power BI Developer with 6+ years of expertise in business intelligence, data visualization, and enterprise analytics. Specialized in designing interactive dashboards, optimizing DAX measures, and building high-performance data models that drive strategic decision-making.
+A Business Intelligence & Analytics Expert with 8+ years of expertise in business intelligence, data visualization, and enterprise analytics. Specialized in designing interactive dashboards, optimizing DAX measures, and building high-performance data models that drive strategic decision-making.
 
-## 💼 Core Expertise
+## Core Expertise
 
 ### Power BI Excellence
 - **Advanced DAX**: Complex measures, time intelligence, performance optimization
@@ -18,15 +18,15 @@ Senior Power BI Developer with 6+ years of expertise in business intelligence, d
 - **Power BI Service**: Workspace management, dataflows, deployment pipelines
 - **Performance Tuning**: Query optimization, model size reduction (60% improvements achieved)
 
-## 📊 Key Achievements
+## Key Achievements
 
-- 🎯 **100+ Power BI Dashboards** delivered across enterprise clients
-- 👥 **500K+ Daily Users** served through scalable analytics platforms
-- ⚡ **30% Decision Speed** improvement through real-time analytics
-- 📈 **20% Productivity Gains** via self-service analytics adoption
-- 🏆 **25+ Certifications** in analytics, AI/ML, and cloud technologies
+- **100+ Power BI Dashboards** delivered across enterprise clients
+- **500K+ Daily Users** served through scalable analytics platforms
+- **30% Decision Speed** improvement through real-time analytics
+- **20% Productivity Gains** via self-service analytics adoption
+- **25+ Certifications** in analytics, AI/ML, and cloud technologies
 
-## 🚀 Featured Projects
+## Featured Projects
 
 ### Enterprise Real Estate Analytics Platform
 **AVIV Group | 2023-Present**
@@ -56,7 +56,7 @@ Cloud:           Azure | Power Platform | AWS
 Integration:      REST APIs | SharePoint | Teams | Power Apps
 ```
 
-## 📚 Education & Certifications
+## Education & Certifications
 
 - **M.Sc. Geodesy and Geoinformation Science** - TU Berlin (Expected 2025)
 - **Deep Learning Specialization** - DeepLearning.AI
@@ -64,26 +64,18 @@ Integration:      REST APIs | SharePoint | Teams | Power Apps
 - **AWS Fundamentals** - Amazon Web Services
 - **Business Analytics Nanodegree** - Udacity
 
-## 🌍 Languages
+## Languages
 
 - 🇸🇦 Arabic (Native)
 - 🇬🇧 English (Fluent)
 - 🇩🇪 German (B1)
 
-## 📫 Contact
+## Contact
 
 - 📧 Email: [fathallah.elmasri@gmail.com](mailto:fathallah.elmasri@gmail.com)
 - 💼 LinkedIn: [linkedin.com/in/fathallahelmasri](https://linkedin.com/in/fathallahelmasri)
 - 📊 Tableau: [public.tableau.com/app/profile/fathallah.elmasri](https://public.tableau.com/app/profile/fathallah.elmasri)
 - 📱 Phone: +966 593834672
-
-## 🎯 Vision for Saudi Ministry of Industry
-
-Excited to establish a world-class **Power BI Center of Excellence** that will:
-- Transform industrial data into strategic insights
-- Enable real-time monitoring of Vision 2030 KPIs
-- Build self-service analytics culture
-- Create bilingual (Arabic/English) executive dashboards
 
 ---
 
