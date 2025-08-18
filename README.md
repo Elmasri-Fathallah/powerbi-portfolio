@@ -83,4 +83,4 @@ Integration:      REST APIs | SharePoint | Teams | Power Apps
 *This portfolio showcases my commitment to excellence in Power BI development and my readiness to contribute to Saudi Arabia's industrial digital transformation.*
 =======
 # powerbi-portfolio
-[>>>>>>> 8febebdbdad07580e80aca1882cb8fcbfca80e48](https://elmasri-fathallah.github.io/powerbi-portfolio/)
+[Portfolio Link](https://elmasri-fathallah.github.io/powerbi-portfolio/)
